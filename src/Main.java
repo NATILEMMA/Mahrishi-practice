@@ -12,8 +12,37 @@ class Main{
     //stringCharIdentifier();
     //validThreeDigitNumber();
     //asciiValue();
-    adderSameNo();
+    //adderSameNo();
+    //printOdd();
+    //factor();
   }
+
+  public static void factor(){
+    Scanner in = new Scanner(System.in);
+    System.out.print("Input an integer: ");
+    int x = in.nextInt(); 
+
+  System.out.println(result(x));
+ } 		
+pub
+ 
+    public static void factor(){
+     Scanner in = new Scanner(System.in);
+     System.out.print("Input an integer: ");
+     int x = in.nextInt(); 
+
+   System.out.println(result(x));
+  } 		
+ public static int result(int num) {	
+   int ctr = 0;
+       for(int i=1; i<=(num); i++) {
+           if(num % i == 0){
+               ctr++;
+           }
+       }
+       return ctr;
+ }
+
   static void asciiValue(){
     System.out.println("insert one character  for ascii value");
     char ch = input.next().charAt(0);
@@ -39,6 +68,16 @@ class Main{
       }
     
     System.out.println(output+" = "+ sum);
+  }
+  static void printOdd(){
+   
+
+    for (int i =1 ; i<=99; i+=2)
+      {
+        System.out.println(i);
+      }
+    
+ 
   }
   static void validThreeDigitNumber(){
     int count = 0;
