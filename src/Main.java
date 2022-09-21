@@ -10,42 +10,50 @@ class Main{
     //hexagonAreaCalculator();
     //reveresString();
     //stringCharIdentifier();
-    validThreeDigitNumber();
+    //validThreeDigitNumber();
+    //asciiValue();
+    adderSameNo();
+  }
+  static void asciiValue(){
+    System.out.println("insert one character  for ascii value");
+    char ch = input.next().charAt(0);
+
+    int asciiValue = (int)(ch);
+    System.out.println("The asciiValue is "+asciiValue);
+  }
+
+    static void adderSameNo(){
+    System.out.println("insert number to be added to its duplicate");
+    String ch = input.nextLine();
+    int sum = 0;
+    String duplicated = ch;
+    String output = ch;
+
+    for (int i =0 ; i<3; i++)
+      {
+      
+        sum = sum + Integer.parseInt(duplicated);
+        if(i>0)
+          output =output + "+" + duplicated;
+        duplicated += ch;
+      }
+    
+    System.out.println(output+" = "+ sum);
   }
   static void validThreeDigitNumber(){
-    int [] numsarray = {1,2,3,4};
-    ArrayList<Integer> nums = new ArrayList<Integer>(nums); 
-  
-    for (int i=1; i<=4;i++){
-      
-      ArrayList<Integer> choosenIndex = new ArrayList<Integer>(); 
-      ArrayList<Integer> number = new ArrayList<Integer>(); 
-
-
-      
-      
-
-      
-      // for (int j=1; j<=4;j++){
-      //   if(j==i)
-    
-      //     continue;
-      //   number = ((number*10) +  j);
-      //   for (int k=1; k<=4;k++){
-      //     if(k==j)
-      //     continue;
-      //     number = ((number*10) +  j);
-      //     for (int l=1; l<=4;l++){
-      //       if(l==k)
-      //       continue;
-      //       number = ((number*10) +  j);
-      //     }
-      //   }
+    int count = 0;
+    for (int i = 1; i<=4;i++){
+     for (int j = 1;j<=4;j++){
+      for(int k = 1; k<=4;k++){
+        if(j!= i && k != i && j != k){
+          System.out.println(i+""+j+""+""+k);
+          count += 1;
+            
+        }
       }
-      count++;
-      System.out.println(number);
-    }
-    System.out.println(count);
+     }
+    }  
+      System.out.println(count);
   }
   static void stringCharIdentifier(){
     System.out.println("Please insert the string to be reversed");
