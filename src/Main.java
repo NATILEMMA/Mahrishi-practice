@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import java.util.Scanner;
 class Main{
   
@@ -15,16 +15,45 @@ class Main{
     //adderSameNo();
     //printOdd();
     //factor();
+    //capitalizer();
+    beforeLastWord();
   }
+  public static void beforeLastWord(){
+   
+    System.out.println("Input the string: ");
+    String text = input.nextLine(); 
+    Scanner textScanner = new Scanner(text);
+    String beforeWord = "";
+    String latterWord = "";
+    String[] hello = text.split("[ ]");
+    System.out.println(hello[0]);
+    while(textScanner.hasNext()){
+      
+      latterWord = textScanner.next();
+      if(textScanner.hasNext())
+        beforeWord = latterWord;
+    }
+    
 
-  public static void factor(){
-    Scanner in = new Scanner(System.in);
-    System.out.print("Input an integer: ");
-    int x = in.nextInt(); 
-
-  System.out.println(result(x));
- } 		
-pub
+    System.out.println(beforeWord);
+ } 	
+  public static void capitalizer(){
+   
+    System.out.println("Input the string: ");
+    String text  = input.nextLine(); 
+    boolean capitalize = true;
+    char [] chartext = text.toCharArray();
+    for (int i = 0 ; i < text.length();i++){
+      if(capitalize == true){
+        chartext[i] = Character.toUpperCase(chartext[i]);
+        capitalize = false;
+      } 
+      if (chartext[i]== ' ')
+        capitalize = true; 
+    }
+    text = String.valueOf(chartext);
+    System.out.println(text);
+ } 	
  
     public static void factor(){
      Scanner in = new Scanner(System.in);
