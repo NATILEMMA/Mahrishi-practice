@@ -35,9 +35,7 @@ class Main{
       }
       
     }
-    for(int i = 0; i< length;i++){
-      System.out.println(array[i]);
-    }
+   
 
 
   }
