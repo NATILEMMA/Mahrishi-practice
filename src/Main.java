@@ -21,7 +21,7 @@ class Main{
 
   }
   public static void sortarray(){
-    int [] array = {1,4,5,6,4,'8'};
+    int [] array = {1,4,5,6,4,8};
     int max = 0;
 
     int length = array.length;
