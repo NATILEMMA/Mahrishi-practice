@@ -17,7 +17,7 @@ class Main{
     //factor();
     //capitalizer();
     //beforeLastWord();
-      sortarray();
+    //sortarray();
 
   }
   public static void sortarray(){
