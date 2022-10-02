@@ -18,10 +18,34 @@ class Main{
     //capitalizer();
     //beforeLastWord();
     //sortarray();
+    int [] array = {};
+    //System.out.println(checkifMiddle(array));
+    //System.out.println(DifferenceEVENODD(array));
 
   }
+  public static int DifferenceEVENODD(int [] array1){
+    int [] array = array1;
+    int sumEven = 0;
+    int sumOdd = 0;
+
+    if (array.length == 0)
+      return 0;
+    else{
+      for(int i = 0 ; i < array.length; i++){
+        if(Math.abs(array[i]%2) == 0){
+          sumEven += array[i];
+        }
+        else{
+          sumOdd += array[i];
+        }
+  
+      }
+      return sumOdd - sumEven;
+    }
+  }
+ 
   public static void sortarray(){
-    int [] array = {1,4,5,6,4,8};
+    int [] array = {3, 2, 1, 4, 5};
     int max = 0;
 
     int length = array.length;
@@ -35,8 +59,34 @@ class Main{
       }
       
     }
-   
+    for(int i = 0; i< length;i++){
+      System.out.println(array[i]);
+    }
 
+  }
+
+    public static int checkifMiddle(int[] array){
+      int [] array1 =array;
+      //index of middle array element and arrray size divided two and adding 1 are not equal thing 
+      //when you make a fution that returns make the function signature right
+  
+
+      if((array1.length%2) == 0 || (array1.length == 0)){
+        return 0;
+      }
+      else{
+        for(int i = 0;i<array1.length ;i++){
+          if(i ==((array1.length/2))){
+            continue;
+          }
+          else if(array1[i] <= array1[((array1.length/2))]){
+            return 0;
+          }
+
+        }
+        return 1;
+
+      }
 
   }
   public static void beforeLastWord(){
