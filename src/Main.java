@@ -20,12 +20,13 @@ class Main{
     //beforeLastWord();
     //sortarray();
     int [] array = {9,8,7,6,5,4,3,2,1};
+    String string = "";
     //System.out.println(checkifMiddle(array));
     //System.out.println(DifferenceEVENODD(array));
     //reverseArray(array);
-    String [] string = {"fl","","flight"};
+    String [] stringArray = {"fl","","flight"};
     //System.out.println(longestCommonPrefix(string));
-    insertArray(array,9,4576);
+    //insertArray(array,9,4576);
 
   }
   public static String longestCommonPrefix(String[] strs) {
