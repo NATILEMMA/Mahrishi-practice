@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.Scanner;
 class Main{
   
@@ -18,10 +19,83 @@ class Main{
     //capitalizer();
     //beforeLastWord();
     //sortarray();
-    int [] array = {};
+    int [] array = {9,8,7,6,5,4,3,2,1};
     //System.out.println(checkifMiddle(array));
     //System.out.println(DifferenceEVENODD(array));
+    //reverseArray(array);
+    String [] string = {"fl","","flight"};
+    //System.out.println(longestCommonPrefix(string));
+    insertArray(array,9,4576);
 
+  }
+  public static String longestCommonPrefix(String[] strs) {
+    char charP ;
+    String prefix = "";
+    int length = strs[0].length();
+    boolean isPreifx = true;
+        
+    for(int i = 0 ; i<length ;i++){
+        charP = (strs[0].toCharArray())[i];
+        for (String string :strs){
+          if(string == "")
+              return prefix;
+            else{
+                if (string.charAt(i) == charP){
+                     continue;
+                 }
+           
+                else{
+                    isPreifx = false;
+                    break;
+                }
+            }
+        }
+        if(isPreifx){
+            prefix = prefix + charP;
+        }
+        
+        else
+            break;
+    }
+    return prefix;
+}
+
+  public static void insertArray(int []array1, int index1, int value1){
+    int[] array = array1;
+    int index = index1;
+    int value = value1;
+    System.out.println(Arrays.toString(array));
+    if(index > array.length-1){
+      array = Arrays.copyOf(array, index+1);
+    }else
+       array = Arrays.copyOf(array, array.length+1);
+    
+    if(index < array.length){
+      for (int i = (array.length-1) ; i>=(index); i--){
+      if(i == index)
+        array[i]= value;
+      else
+        array[i] = array[i-1];
+        
+      }
+    }
+    System.out.println(Arrays.toString(array));
+ }
+
+  public static void reverseArray(int [] array){
+    int length = (array.length);
+    String s = "hello";
+    
+    char[] prefix= {};
+    prefix[0] = (s.toCharArray())[0];
+    int number = 0;
+    for (int i = 0; i<(length/2); i++){
+      number = array[i];
+      array[i] = array[(length-1)-i];
+      array[(length-1)-i] = number;
+      
+    }
+    System.out.println(Arrays.toString(array));
   }
   public static int DifferenceEVENODD(int [] array1){
     int [] array = array1;
