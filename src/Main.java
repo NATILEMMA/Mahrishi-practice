@@ -1,4 +1,5 @@
 
+import java.security.Key;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Dictionary;
@@ -27,7 +28,7 @@ class Main{
     //System.out.println(checkifMiddle(array));
     //System.out.println(DifferenceEVENODD(array));
     //reverseArray(array);
-    String [] stringArray = {"fl","hello","flight"};
+    String [] stringArray = {"fl","hello","flight","hello","hello","fl"};
     //System.out.println(longestCommonPrefix(string));
     // insertArray(array,0,4576);
     // addElementToArray(array,0,4567);
@@ -38,22 +39,8 @@ class Main{
   
 
   public static void duplicateString(String []array){
-    //create a dictionary
-`
-    Dictionary dict = new Hashtable();
-    Integer exist = 0;
+   
     
-    
-    for (String string : array){
-      if(dict.get(string) != null){
-        
-      }
-     
-    }
-    
-    //if string dictionary exity if true increament
-    // else add to dictionary
-    // print everyword of dictonay which has more value than 1
   }
 
   public static void arrayDeleteArrayElement(int index, int[] array){
