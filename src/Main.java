@@ -26,8 +26,28 @@ class Main{
     //reverseArray(array);
     String [] stringArray = {"fl","","flight"};
     //System.out.println(longestCommonPrefix(string));
-    //insertArray(array,9,4576);
+    insertArray(array,0,4576);
+    addElementToArray(array,0,4567);
 
+  }
+
+  public static void addElementToArray(int [] array1 , int index1, int value1){
+    int index =index1;
+    int value= value1;
+    int [] array = array1;
+    if(array.length > index){
+
+      array = Arrays.copyOf(array,array.length+1);
+      for(int i = array.length-2; i>=index;i--){
+        array[i+1] = array[i];
+      }
+      array[index]= value;
+    }
+    else{
+      array = Arrays.copyOf(array,index+1);
+      array[index] = value;
+    }
+    System.out.println(Arrays.toString(array));
   }
   public static String longestCommonPrefix(String[] strs) {
     char charP ;
