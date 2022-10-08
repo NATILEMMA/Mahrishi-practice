@@ -54,10 +54,7 @@ class Main{
         if(value>1){
           System.out.println(key +" :" + value);
         }
-        
-        
     });
-    
   }
 
   public static void arrayDeleteArrayElement(int index, int[] array){
