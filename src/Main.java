@@ -1,6 +1,9 @@
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Dictionary;
+import java.util.Hashtable;
+import java.util.HashMap;
 class Main{
   
   static Scanner input = new Scanner(System.in);
@@ -8,7 +11,7 @@ class Main{
 
     //twoNumbersCompare();
     //numberDigitAdder();
-    //hexagonAreaCalculator();
+    //hexagonAreaCalculator(); 
     //reveresString();
     //stringCharIdentifier();
     //validThreeDigitNumber();
@@ -24,12 +27,33 @@ class Main{
     //System.out.println(checkifMiddle(array));
     //System.out.println(DifferenceEVENODD(array));
     //reverseArray(array);
-    String [] stringArray = {"fl","","flight"};
+    String [] stringArray = {"fl","hello","flight"};
     //System.out.println(longestCommonPrefix(string));
     // insertArray(array,0,4576);
     // addElementToArray(array,0,4567);
-    arrayDeleteArrayElement(5,array);
+    //arrayDeleteArrayElement(5,array);
+    duplicateString(stringArray);
 
+  }
+  
+
+  public static void duplicateString(String []array){
+    //create a dictionary
+`
+    Dictionary dict = new Hashtable();
+    Integer exist = 0;
+    
+    
+    for (String string : array){
+      if(dict.get(string) != null){
+        
+      }
+     
+    }
+    
+    //if string dictionary exity if true increament
+    // else add to dictionary
+    // print everyword of dictonay which has more value than 1
   }
 
   public static void arrayDeleteArrayElement(int index, int[] array){
