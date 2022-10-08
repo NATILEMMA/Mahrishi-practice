@@ -40,6 +40,23 @@ class Main{
 
   public static void duplicateString(String []array){
    
+    HashMap <String,Integer> dictionary = new HashMap <>();
+    Integer val = 0;
+    for (String string : array){
+      if (dictionary.containsKey(string)){
+        val = dictionary.get(string);
+        dictionary.put(string,++val);
+      }else {
+        dictionary.put(string,1);
+      }
+    }
+    dictionary.forEach((key,value)->{
+        if(value>1){
+          System.out.println(key +" :" + value);
+        }
+        
+        
+    });
     
   }
 
