@@ -19,18 +19,38 @@ class Main{
     //capitalizer();
     //beforeLastWord();
     //sortarray();
-    int [] array = {9,8,7,6,5,4,3,2,1};
+    int [] array = {9,8,7,6,5,3,2,1};
     String string = "";
     //System.out.println(checkifMiddle(array));
     //System.out.println(DifferenceEVENODD(array));
     //reverseArray(array);
     String [] stringArray = {"fl","","flight"};
     //System.out.println(longestCommonPrefix(string));
-    insertArray(array,0,4576);
-    addElementToArray(array,0,4567);
+    // insertArray(array,0,4576);
+    // addElementToArray(array,0,4567);
+    arrayDeleteArrayElement(5,array);
 
   }
 
+  public static void arrayDeleteArrayElement(int index, int[] array){
+    int carry1 = 0;
+    int carry2 = 0;
+    int len = array.length;
+
+    
+    if(index<array.length){
+      carry1 = array[len-1];
+      
+      array= Arrays.copyOf(array, len-1);
+     
+      for (int i = array.length-1; i >= index;i--){
+        carry2 = array[i];
+        array[i] = carry1;
+        carry1 = carry2;
+    }
+  }
+  System.out.println(Arrays.toString(array));
+}
   public static void addElementToArray(int [] array1 , int index1, int value1){
     int index =index1;
     int value= value1;
