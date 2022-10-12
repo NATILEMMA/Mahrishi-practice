@@ -1,9 +1,5 @@
-
-import java.security.Key;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Dictionary;
-import java.util.Hashtable;
 import java.util.HashMap;
 class Main{
   
@@ -23,7 +19,7 @@ class Main{
     //capitalizer();
     //beforeLastWord();
     //sortarray();
-    int [] array = {9,8,7,6,5,3,2,1};
+    int [] array = {1,4,2,5};
     String string = "";
     //System.out.println(checkifMiddle(array));
     //System.out.println(DifferenceEVENODD(array));
@@ -33,11 +29,13 @@ class Main{
     // insertArray(array,0,4576);
     // addElementToArray(array,0,4567);
     //arrayDeleteArrayElement(5,array);
-    duplicateString(stringArray);
+    //duplicateString(stringArray);
+    //deleteDuplicateArrayElement();
+    System.out.println(sumOddLengthSubarrays(array));
 
   }
   
-
+  
   public static void duplicateString(String []array){
    
     HashMap <String,Integer> dictionary = new HashMap <>();
@@ -61,8 +59,6 @@ class Main{
     int carry1 = 0;
     int carry2 = 0;
     int len = array.length;
-
-    
     if(index<array.length){
       carry1 = array[len-1];
       
