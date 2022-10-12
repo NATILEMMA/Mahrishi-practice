@@ -35,7 +35,32 @@ class Main{
 
   }
   
-  
+  public static int sumOddLengthSubarrays(int[] arr) {
+    int sum = 0;
+    int j = 0;
+    for (int i = 0; i<arr.length;i++){
+       j = i;
+       int k = i;
+       while(k<=j){
+        sum = sum + arr[k];
+            System.out.println("upto"+ k + "for index" + i+ "and sum :"+ sum);
+           
+          if(k == j && j<arr.length-2)
+          {
+
+              k = i;
+             j =j + 2;
+            System.out.println(j);
+
+          }else 
+          k = k+1;
+       }
+            
+          
+    }
+    return sum;
+    
+}
   public static void duplicateString(String []array){
    
     HashMap <String,Integer> dictionary = new HashMap <>();
