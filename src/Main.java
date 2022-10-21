@@ -1,6 +1,9 @@
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
 class Main{
   
   static Scanner input = new Scanner(System.in);
@@ -19,7 +22,7 @@ class Main{
     //capitalizer();
     //beforeLastWord();
     //sortarray();
-    int [] array = {1,4,2,5};
+    int [] array = {-1,0,1,2,-1,-4};
     String string = "";
     //System.out.println(checkifMiddle(array));
     //System.out.println(DifferenceEVENODD(array));
@@ -31,36 +34,89 @@ class Main{
     //arrayDeleteArrayElement(5,array);
     //duplicateString(stringArray);
     //deleteDuplicateArrayElement();
-    System.out.println(sumOddLengthSubarrays(array));
+   // threeSum();
+    
+    
+   System.out.println(perfectSquare(-5));
 
   }
-  
-  public static int sumOddLengthSubarrays(int[] arr) {
-    int sum = 0;
-    int j = 0;
-    for (int i = 0; i<arr.length;i++){
-       j = i;
-       int k = i;
-       while(k<=j){
-        sum = sum + arr[k];
-            System.out.println("upto"+ k + "for index" + i+ "and sum :"+ sum);
-           
-          if(k == j && j<arr.length-2)
-          {
+  public static int perfectSquare(int num){
+  int perfectsquare = 0;
+  if(num<0)
+  return perfectsquare;
+  else{
+    int root = (int) Math.sqrt((double)num)+1;
+    perfectsquare = ( root)*(root);
+    return perfectsquare;
+  }
 
-              k = i;
-             j =j + 2;
-            System.out.println(j);
+  }
 
-          }else 
-          k = k+1;
-       }
-            
-          
-    }
-    return sum;
     
-}
+      public static int sumOddLengthSubarrays(int[] arr) {
+          int sum  = 0;
+          for (int i = 0;i<arr.length;i++){
+              for (int j = i;j<=arr.length-1;j+=2){
+                  for (int k =i ; k<=j;k++ ){
+                      sum = sum + arr[k];
+                  }
+              }
+          }
+       return sum;
+      
+            
+     
+  }
+  
+//     public static void threeSum() {
+//         Map <Integer, Integer> map = new HashMap<>();
+//         //int size = nums.length;
+//         int index;
+//         String abe = "bay";
+//         Character ch = 'h';
+//         abe = abe + ch;
+//         System.out.print(abe);
+// //         int complement;
+// //         Arrays.sort(nums);
+// //         map.clear();
+// //         for(int i = 0 ;i<size;i++){
+// //             map.put(nums[i],i);
+// //         }
+
+// //         List <List<Integer>> result = new ArrayList<>();
+// //         List <Integer> list;
+// //         if(!(nums[size-1]<0)){
+// //             for (int i = 0;( i< size && nums[i] <= 0);i++){
+// //             for(int j = i+1;j<size;j++){
+// //                 complement = -1*(nums[i]+nums[j]);
+                
+// //                 if(map.containsKey(complement)){
+// //                    index = map.get(complement);
+// //                     list = new ArrayList(List.of(nums[i],nums[j],complement));
+                    
+// //                     if((index != i && index != j && index > j && !result.contains(list))){
+
+// //                             result.add(list);
+            
+// //                     } 
+// //                 }
+                    
+// //             }
+ 
+         
+      
+     
+// // }
+// //         }
+        
+//         // return result;
+//     }
+
+
+  
+  
+  
+
   public static void duplicateString(String []array){
    
     HashMap <String,Integer> dictionary = new HashMap <>();
@@ -120,7 +176,8 @@ class Main{
     String prefix = "";
     int length = strs[0].length();
     boolean isPreifx = true;
-        
+    String hello = "hello";
+      
     for(int i = 0 ; i<length ;i++){
         charP = (strs[0].toCharArray())[i];
         for (String string :strs){
@@ -129,6 +186,7 @@ class Main{
             else{
                 if (string.charAt(i) == charP){
                      continue;
+                    
                  }
            
                 else{
