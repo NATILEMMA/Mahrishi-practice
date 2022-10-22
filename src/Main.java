@@ -22,7 +22,8 @@ class Main{
     //capitalizer();
     //beforeLastWord();
     //sortarray();
-    int [] array = {-1,0,1,2,-1,-4};
+    int [] array ={3, 1, 2, 3, 0};
+    int n = 5;
     String string = "";
     //System.out.println(checkifMiddle(array));
     //System.out.println(DifferenceEVENODD(array));
@@ -36,9 +37,70 @@ class Main{
     //deleteDuplicateArrayElement();
    // threeSum();
     
-    
-   System.out.println(perfectSquare(-5));
+   // mharish updated compro question page length 91 exersice
+  // System.out.println(ounUpCount({6,3,1},11));
+   //System.out.println(nUpCount(array,n));
+    //System.out.println(primeCount(-10,6));
+    System.out.println(isMadhavArray(array));
 
+  }
+  public static int isMadhavArray(int []a){
+    int j = 0;
+    int current_sum = 0;
+    int min = 0;
+    int max = 0;
+    double double_value =  Math.sqrt(1+8*a.length);
+    int int_value = (int)Math.sqrt(1+8*a.length);
+
+    if((double_value*double_value) == (double)(int_value *int_value)){
+      while(max<a.length){
+        current_sum = 0;
+        for(int  i = min; i<=max;i++){
+          current_sum +=a[i];          
+        }
+        if(current_sum == a[0]){
+          min = max+1;
+          max = max+2+j;
+          j++;
+        }
+        else{
+          return 0;
+        }
+      }
+      return 1; 
+    }else
+      return 0;
+  }
+  public static int primeCount(int start, int end){
+    int count = 0;
+    for(int i = start; i<= end; i++){
+      if(i == 1 || i<0)
+      continue;
+      else if( i == 3 || i ==5 || i == 2)
+        count++;
+      else if(!(i % 3 == 0 || i % 2 == 0|| i % 5 == 0)){
+        count++;
+      }
+    }
+    return count;
+  }
+  
+
+  public static int nUpCount(int[] a, int n) {
+    int upcount = 0;
+    int sum = 0;
+    for (int i = 0; i< a.length; i++){
+      if(sum <= n){
+        sum = sum + a[i];
+        if(sum > n){
+          upcount++;
+        }
+      }else{
+        sum = sum + a[i];
+      }
+     }
+
+return upcount;
   }
   public static int perfectSquare(int num){
   int perfectsquare = 0;
@@ -52,21 +114,21 @@ class Main{
 
   }
 
-    
-      public static int sumOddLengthSubarrays(int[] arr) {
-          int sum  = 0;
-          for (int i = 0;i<arr.length;i++){
-              for (int j = i;j<=arr.length-1;j+=2){
-                  for (int k =i ; k<=j;k++ ){
-                      sum = sum + arr[k];
-                  }
-              }
-          }
-       return sum;
+  
+public static int sumOddLengthSubarrays(int[] arr) {
+    int sum  = 0;
+    for (int i = 0;i<arr.length;i++){
+        for (int j = i;j<=arr.length-1;j+=2){
+            for (int k =i ; k<=j;k++ ){
+                sum = sum + arr[k];
+            }
+        }
+    }
+  return sum;
+
       
-            
-     
-  }
+
+}
   
 //     public static void threeSum() {
 //         Map <Integer, Integer> map = new HashMap<>();
