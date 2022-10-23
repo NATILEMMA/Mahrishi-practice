@@ -22,7 +22,7 @@ class Main{
     //capitalizer();
     //beforeLastWord();
     //sortarray();
-    int [] array ={3, 1, 2, 3, 0};
+    int [] array ={9};
     int n = 5;
     String string = "";
     //System.out.println(checkifMiddle(array));
@@ -38,11 +38,71 @@ class Main{
    // threeSum();
     
    // mharish updated compro question page length 91 exersice
-  // System.out.println(ounUpCount({6,3,1},11));
+   //System.out.println(ounUpCount({6,3,1},11));
    //System.out.println(nUpCount(array,n));
     //System.out.println(primeCount(-10,6));
-    System.out.println(isMadhavArray(array));
+    //System.out.println(isMadhavArray(array));
+    //System.out.println(isInertial(array));
+    System.out.println(countSquarePairs(array));
+    
+  }
 
+ 
+  public static boolean isPerfectSquare(int num){
+    if(num<0)
+      return false;
+    double double_value =  Math.sqrt(num);
+    int int_value = (int)Math.sqrt(num);
+
+    if((double_value*double_value) == (double)(int_value *int_value)){
+        return true;
+    }else 
+    return false;
+  }
+
+  public static int countSquarePairs(int[ ] a){
+    Arrays.sort(a);
+    int sum;
+    int count = 0;
+    for (int i = 0;i<a.length;i++){
+      for (int j = i+1;j<a.length;j++){
+        sum = 0;
+        if(a[i]<a[j] && a[i]>0 && a[j]>0 ){
+          sum = a[i]+a[j];
+          if(isPerfectSquare(sum)){
+            System.out.println("x"+a[i] +"y"+a[j]);
+            count ++;
+          }
+           
+        }
+
+      }
+    }
+    return count;
+  }
+  public static int isInertial(int[ ] a){
+    boolean inOdd = true;
+    Arrays.sort(a);
+    if(a[a.length-1] %2 != 0)
+      return 0;
+    if(a[0]%2 == 0)
+      inOdd = false;
+    for(int i = 0;i<a.length;i++){
+      if(a[i]%2 == 0 && !(inOdd)  && a[a.length-1] != a[i]){
+        continue;
+      }else if(a[i]%2 == 0 && (inOdd) && a[a.length-1] != a[i] ){
+          return 0;
+      }else if (a[i]%2 != 0 ){
+        inOdd = true;
+        
+      }else if (a[i]%2 == 0 && a[a.length-1] == a[i]&& inOdd ){
+        return 1;
+      }else{
+        return 0;
+      }
+      
+    }
+    return 0;
   }
   public static int isMadhavArray(int []a){
     int j = 0;
