@@ -43,10 +43,55 @@ class Main{
     //System.out.println(primeCount(-10,6));
     //System.out.println(isMadhavArray(array));
     //System.out.println(isInertial(array));
-    System.out.println(countSquarePairs(array));
+   // System.out.println(countSquarePairs(array));
+    System.out.println(findPorcupineNumber(1));
     
   }
-
+  public static int isPrime(int num){
+    
+   
+      if(num == 1 || num<0)
+      return 0;
+     
+      else if(!(num % 3 == 0 || num % 2 == 0|| num % 5 == 0))
+        return 1;
+      else
+      return 0;
+    
+    
+  }
+  public static int findPorcupineNumber(int num){
+    for (int i = num +1; ;i++){
+      if(isPrime(i)== 1){
+        if(i % 10 == 9)
+        return  i;
+      }
+    }
+  }
+public static int isGuthrieSequence(int[ ] a){
+  int num = a[0];
+  if(num<0)
+    return 0;
+  for(int i= 1;i<a.length;i++){
+    
+    if(num %2 ==0){
+      num= num / 2;
+      if(num == a[i]){
+      num = a[i];
+      continue;
+      }else
+        return 0;
+    }else{
+      num =(num* 3)+1;
+      if(num == a[i]){
+        num = a[i];
+        continue;
+        }else
+          return 0;
+    }
+  }
+  return 1;
+}
  
   public static boolean isPerfectSquare(int num){
     if(num<0)
