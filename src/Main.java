@@ -22,7 +22,7 @@ class Main{
     //capitalizer();
     //beforeLastWord();
     //sortarray();
-    int [] array ={9};
+    int [] array ={0, 0, 0};
     int n = 5;
     String string = "";
     //System.out.println(checkifMiddle(array));
@@ -44,9 +44,136 @@ class Main{
     //System.out.println(isMadhavArray(array));
     //System.out.println(isInertial(array));
    // System.out.println(countSquarePairs(array));
-    System.out.println(findPorcupineNumber(1));
-    
+    //System.out.println(findPorcupineNumber(1));
+    //System.out.println( isGuthrieSequence(array));
+    //System.out.println(isfibbonaci(13));
+   // System.out.println(stantonMeasure(array));
+   //System.out.println(factorial(8) + factorial(8));
+   //System.out.println(solve10());
+  //System.out.println(repsEqual(32053,new int[]{3, 2, 0, 5, 3, 4}));
+  System.out.println(isCentered15(new int[]{1, 1, 15 -1,-1}));
   }
+  public static  int isCentered15(int[ ] a){
+    int min = 0 , max = a.length-1;
+    int sum= 0;
+      while(max >= min){
+        sum = 0;
+        for (int i = min; i<=max;i++){
+          sum = sum + a[i];
+        }
+        if(sum == 15){
+          return 1;
+        }else{
+          min++;
+          max--;
+        }
+      }
+      return 0; 
+  }
+  public static int repsEqual(int num,int []a){
+    int temp = 0;
+    for (int i = a.length-1; i>=0;i--){
+      temp = num % 10;
+      num = num / 10;
+       if(temp == a[i])
+          continue;
+        else{
+        
+          return 0;
+        }       //{3, 2, 0, 5, 3}
+    }
+    if(num == 0)
+       return 1;
+    else
+      return 0;
+  }
+  public static int[] solve10(){
+    int x = 1;
+    int y = 1;
+    int ten_factorial = factorial(10);
+    int [] a = new int[2];
+    int sum = 0;
+    
+    while(x<10){
+      if(sum == ten_factorial){
+        a[0] = x;
+        a[1] = y;
+        System.out.println(x);
+        System.out.println(y);
+        return a;
+      }else if(sum > ten_factorial){
+        System.out.println("factorial("+x+") +factorial("+y+") = "+sum); 
+        x = x+1;
+          y = x;
+          
+           sum = factorial(x) +factorial(y);
+          
+      }
+      else {
+        System.out.println("factorial("+x+") +factorial("+y+") = "+sum);
+        y = y+1;
+        
+        sum = factorial(x) +factorial(y);
+        
+      }
+
+    
+    }
+    return a;
+    }
+  public static int factorial(int num){
+
+    int result;
+      if(num<0)
+      return 0;
+    if(num == 1 || num ==0){
+      result = 1;
+      return result;
+    }else
+    result = num * factorial(num -1); 
+    return result;
+  }
+  
+  public static int isfibbonaci (int num){
+	
+    int min = 1, max = 1;
+    int sum = 0;
+    if(num<1)
+    return 0;
+    if(num == 1)
+    return 1;
+    else{
+    while(sum<num){
+    
+      sum = min + max;
+      if(sum == num)
+      return 1;
+      else{
+        min = max;
+        max = sum;
+      }  
+    }
+    return 0;
+    }
+  }
+  public static int stantonMeasure(int[ ] a){
+  int count_one = 0;
+  int count_one_counter = 0;
+  
+    for (int i = 0; i<a.length;i++)
+      {
+  
+        if(a[i] == 1){
+          count_one++;
+        }
+      }
+    for (int i = 0;i<a.length;i++){
+      if(a[i] == count_one)
+        count_one_counter++;
+    }
+    return count_one_counter;
+  }
+  
   public static int isPrime(int num){
     
    
@@ -57,8 +184,6 @@ class Main{
         return 1;
       else
       return 0;
-    
-    
   }
   public static int findPorcupineNumber(int num){
     for (int i = num +1; ;i++){
@@ -68,7 +193,7 @@ class Main{
       }
     }
   }
-public static int isGuthrieSequence(int[ ] a){
+  public static int isGuthrieSequence(int[ ] a){
   int num = a[0];
   if(num<0)
     return 0;
@@ -92,7 +217,6 @@ public static int isGuthrieSequence(int[ ] a){
   }
   return 1;
 }
- 
   public static boolean isPerfectSquare(int num){
     if(num<0)
       return false;
@@ -104,7 +228,6 @@ public static int isGuthrieSequence(int[ ] a){
     }else 
     return false;
   }
-
   public static int countSquarePairs(int[ ] a){
     Arrays.sort(a);
     int sum;
@@ -189,7 +312,6 @@ public static int isGuthrieSequence(int[ ] a){
     }
     return count;
   }
-  
 
   public static int nUpCount(int[] a, int n) {
     int upcount = 0;
@@ -675,7 +797,6 @@ public static int sumOddLengthSubarrays(int[] arr) {
     System.out.println("The area of hexagon is: "+ AreaoFHexagon);
   }
 
-
   static void numberDigitAdder(){
     int inputInteger;
     
@@ -691,9 +812,6 @@ public static int sumOddLengthSubarrays(int[] arr) {
     }
     System.out.println("The sum of the digits is: "+ sum);
   }
-
-
-
   static void twoNumbersCompare(){
     long firstInput = 0;
     long secondInput = 0;
